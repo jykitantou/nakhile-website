@@ -124,6 +124,9 @@
   /* Hidden cards for filter */
   .card-item { display: flex; }
   .card-item.hidden-card { display: none; }
+  /* Skeleton loading */
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .skeleton { animation: pulse 1.5s ease-in-out infinite; background-color: #e6e8ea; border-radius: 0.5rem; }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed-dim selection:text-tertiary-container">
@@ -159,7 +162,7 @@
           Analyses, thought leadership, and real-world use cases at the intersection of AI governance, algorithmic accountability, and financial risk.
         </p>
       </div>
-      <!-- Decorative bar chart accent (matches index hero) -->
+      <!-- Decorative bar chart accent -->
       <div class="lg:col-span-4 hidden lg:flex items-end justify-end pb-2">
         <div class="flex items-end gap-2">
           <div class="w-1 h-10 bg-primary-container"></div>
@@ -186,199 +189,18 @@
 
   <!-- ═══════════════════════════ FEATURED ARTICLE ═══════════════════════════ -->
   <div class="max-w-7xl mx-auto px-8 mb-12" id="featured-section">
-    <div class="insight-card relative bg-primary rounded-[1.5rem] overflow-hidden min-h-[420px] flex flex-col justify-end p-10 lg:p-14 group cursor-pointer card-item" data-category="analysis">
-      <!-- Background texture -->
-      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.2) 1px, transparent 0); background-size: 36px 36px;"></div>
-      <!-- Decorative large icon -->
-      <div class="absolute top-10 right-10 opacity-[0.06]">
-        <span class="material-symbols-outlined" style="font-size: 14rem; line-height:1;">policy</span>
-      </div>
-      <div class="relative z-10 max-w-3xl">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="pill-analysis text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Analysis</span>
-          <span class="text-on-primary-container text-xs">March 2026 &nbsp;·&nbsp; 12 min read</span>
-        </div>
-        <h2 class="font-headline text-3xl md:text-5xl font-extrabold text-on-primary tracking-tighter leading-tight mb-6">
-          The Hidden Cost of Algorithmic Opacity in Financial Services
-        </h2>
-        <p class="text-on-primary-container text-lg leading-relaxed max-w-2xl mb-8">
-          When automated models make high-stakes credit, pricing, and risk decisions without explainability structures in place, organisations don't just face regulatory scrutiny — they accumulate invisible governance debt that surfaces at the worst possible moment.
-        </p>
-        <a href="#" class="read-link font-headline font-bold text-tertiary-fixed-dim text-sm uppercase tracking-widest">
-          Read Full Analysis <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-    </div>
+    <!-- Rendered dynamically from data/insights.json -->
+    <div class="skeleton min-h-[420px] rounded-[1.5rem]"></div>
   </div>
 
   <!-- ═══════════════════════════ MAIN GRID ═══════════════════════════ -->
   <section class="max-w-7xl mx-auto px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="cards-grid">
-
-      <!-- Card 1 — Analysis -->
-      <div class="insight-card card-item flex-col bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer" data-category="analysis">
-        <div class="h-48 bg-surface-container-high relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-10">
-            <span class="material-symbols-outlined" style="font-size: 8rem;">gavel</span>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-br from-primary-container/60 to-transparent"></div>
-          <div class="absolute bottom-4 left-4">
-            <span class="pill-analysis text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Analysis</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-1">
-          <p class="text-on-surface-variant text-xs mb-3">February 2026 &nbsp;·&nbsp; 8 min read</p>
-          <h3 class="font-headline font-extrabold text-xl text-primary leading-tight mb-4">EU AI Act: What It Means for Your Governance Framework</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed flex-1 mb-6">A breakdown of high-risk AI system classifications, conformity requirements, and the operational changes global firms must embed before enforcement deadlines.</p>
-          <a href="#" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-        </div>
-      </div>
-
-      <!-- Card 2 — Article -->
-      <div class="insight-card card-item flex-col bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer" data-category="article">
-        <div class="h-48 bg-tertiary-container relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-10">
-            <span class="material-symbols-outlined text-on-tertiary" style="font-size: 8rem;">visibility</span>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-br from-tertiary-container to-on-tertiary-fixed/40"></div>
-          <div class="absolute bottom-4 left-4">
-            <span class="pill-article text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Article</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-1">
-          <p class="text-on-surface-variant text-xs mb-3">January 2026 &nbsp;·&nbsp; 6 min read</p>
-          <h3 class="font-headline font-extrabold text-xl text-primary leading-tight mb-4">From Black Box to Glass Box: Explainability in Practice</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed flex-1 mb-6">Explainability is not a compliance checkbox — it is a structural design choice. We explore the practical techniques that make model decisions auditable without sacrificing performance.</p>
-          <a href="#" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-        </div>
-      </div>
-
-      <!-- Card 3 — Use Case (dark, accent) -->
-      <div class="insight-card card-item flex-col bg-primary-container rounded-xl overflow-hidden cursor-pointer" data-category="use-case">
-        <div class="h-48 relative overflow-hidden bg-primary/80">
-          <div class="absolute inset-0 flex items-center justify-center opacity-10">
-            <span class="material-symbols-outlined text-on-primary" style="font-size: 8rem;">account_balance</span>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container"></div>
-          <div class="absolute bottom-4 left-4">
-            <span class="pill-use-case text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Use Case</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-1">
-          <p class="text-on-primary-container text-xs mb-3">December 2025 &nbsp;·&nbsp; 10 min read</p>
-          <h3 class="font-headline font-extrabold text-xl text-on-primary leading-tight mb-4">How a Global Bank Reduced Model Risk Exposure by 40%</h3>
-          <p class="text-primary-fixed-dim text-sm leading-relaxed flex-1 mb-6">An end-to-end account of our engagement with a Tier-1 financial institution: mapping algorithmic decision points, introducing materiality-based oversight, and building a board-ready reporting layer.</p>
-          <a href="#" class="read-link font-headline font-bold text-tertiary-fixed-dim text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-        </div>
-      </div>
-
-      <!-- Card 4 — Article -->
-      <div class="insight-card card-item flex-col bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer" data-category="article">
-        <div class="h-48 bg-secondary-container relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-15">
-            <span class="material-symbols-outlined" style="font-size: 8rem;">hub</span>
-          </div>
-          <div class="absolute bottom-4 left-4">
-            <span class="pill-article text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Article</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-1">
-          <p class="text-on-surface-variant text-xs mb-3">November 2025 &nbsp;·&nbsp; 7 min read</p>
-          <h3 class="font-headline font-extrabold text-xl text-primary leading-tight mb-4">The Decision Stack: Mapping Accountability in Automated Systems</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed flex-1 mb-6">When an autonomous system makes a consequential decision, who is accountable? We introduce the Decision Stack framework — a layered model for assigning ownership across technical and business teams.</p>
-          <a href="#" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-        </div>
-      </div>
-
-      <!-- Card 5 — Analysis -->
-      <div class="insight-card card-item flex-col bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer" data-category="analysis">
-        <div class="h-48 bg-surface-container-high relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-10">
-            <span class="material-symbols-outlined" style="font-size: 8rem;">public</span>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-tr from-surface-container-high to-secondary-container/50"></div>
-          <div class="absolute bottom-4 left-4">
-            <span class="pill-analysis text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Analysis</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-1">
-          <p class="text-on-surface-variant text-xs mb-3">October 2025 &nbsp;·&nbsp; 9 min read</p>
-          <h3 class="font-headline font-extrabold text-xl text-primary leading-tight mb-4">Regulatory Divergence in AI: Navigating US, EU, and APAC Frameworks</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed flex-1 mb-6">As jurisdictions develop competing AI regulatory regimes, multinational organisations face a compliance patchwork. We map the key divergences and propose a unified governance architecture that satisfies all three.</p>
-          <a href="#" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-        </div>
-      </div>
-
-      <!-- Card 6 — Use Case -->
-      <div class="insight-card card-item flex-col bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer" data-category="use-case">
-        <div class="h-48 bg-surface-container-high relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-10">
-            <span class="material-symbols-outlined" style="font-size: 8rem;">show_chart</span>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-bl from-tertiary-container/40 to-transparent"></div>
-          <div class="absolute bottom-4 left-4">
-            <span class="pill-use-case text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Use Case</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-1">
-          <p class="text-on-surface-variant text-xs mb-3">September 2025 &nbsp;·&nbsp; 11 min read</p>
-          <h3 class="font-headline font-extrabold text-xl text-primary leading-tight mb-4">Autonomous Trading Systems: A Governance Blueprint</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed flex-1 mb-6">A deep-dive into our governance engagement with a quantitative asset manager — embedding real-time oversight controls, kill-switch protocols, and audit trails into a live algorithmic trading infrastructure.</p>
-          <a href="#" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-        </div>
-      </div>
-
-      <!-- Card 7 — Article (wide, 2-col) -->
-      <div class="insight-card card-item flex-col md:col-span-2 bg-surface-container-low rounded-xl overflow-hidden cursor-pointer" data-category="article">
-        <div class="grid md:grid-cols-2 h-full">
-          <div class="p-10 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-3 mb-5">
-                <span class="pill-article text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Article</span>
-                <span class="text-on-surface-variant text-xs">August 2025 &nbsp;·&nbsp; 5 min read</span>
-              </div>
-              <h3 class="font-headline font-extrabold text-2xl text-primary leading-tight mb-4">Building an AI Ethics Committee That Actually Delivers</h3>
-              <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Most AI ethics committees are window dressing. We outline the mandate, membership criteria, decision rights, and escalation pathways that make these bodies genuinely effective — and credible to regulators.</p>
-            </div>
-            <a href="#" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-          </div>
-          <div class="bg-surface-container-high relative overflow-hidden min-h-[220px]">
-            <div class="absolute inset-0 flex items-center justify-center opacity-10">
-              <span class="material-symbols-outlined" style="font-size: 10rem;">groups</span>
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-r from-surface-container-low to-transparent"></div>
-            <!-- Structural accent lines -->
-            <div class="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-2 opacity-30">
-              <div class="w-16 h-px bg-primary"></div>
-              <div class="w-10 h-px bg-tertiary-fixed-dim"></div>
-              <div class="w-20 h-px bg-primary"></div>
-              <div class="w-8 h-px bg-tertiary-fixed-dim"></div>
-              <div class="w-14 h-px bg-primary"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 8 — Analysis -->
-      <div class="insight-card card-item flex-col bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer" data-category="analysis">
-        <div class="h-48 bg-surface-container relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-10">
-            <span class="material-symbols-outlined" style="font-size: 8rem;">analytics</span>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-br from-secondary-container/60 to-transparent"></div>
-          <div class="absolute bottom-4 left-4">
-            <span class="pill-analysis text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Analysis</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-1">
-          <p class="text-on-surface-variant text-xs mb-3">July 2025 &nbsp;·&nbsp; 8 min read</p>
-          <h3 class="font-headline font-extrabold text-xl text-primary leading-tight mb-4">Model Drift and the Governance Gap: A Quantitative Perspective</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed flex-1 mb-6">Edge-case drift is the leading cause of AI system failure in production. We quantify the governance gap between model deployment and ongoing oversight, and propose a monitoring architecture firms can implement today.</p>
-          <a href="#" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
-        </div>
-      </div>
-
-    </div><!-- /cards-grid -->
+      <!-- Cards rendered dynamically from data/insights.json -->
+      <div class="skeleton h-80 rounded-xl"></div>
+      <div class="skeleton h-80 rounded-xl"></div>
+      <div class="skeleton h-80 rounded-xl"></div>
+    </div>
   </section>
 
   <!-- ═══════════════════════════ NEWSLETTER / CTA ═══════════════════════════ -->
@@ -450,32 +272,146 @@
   </div>
 </footer>
 
-<!-- ═══════════════════════════ FILTER LOGIC ═══════════════════════════ -->
+<!-- ═══════════════════════════ INSIGHTS — FETCH + RENDER + FILTER ═══════════════════════════ -->
 <script>
-  function filterCards(category) {
-    // Update button states
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+(function () {
+  'use strict';
+
+  // ── Helpers ─────────────────────────────────────────────────────────────────
+  function h(s) {
+    return String(s != null ? s : '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  const PILL  = { analysis: 'pill-analysis', article: 'pill-article', 'use-case': 'pill-use-case' };
+  const LABEL = { analysis: 'Analysis',      article: 'Article',      'use-case': 'Use Case'      };
+
+  // ── Featured large card ─────────────────────────────────────────────────────
+  function renderFeatured(a) {
+    var cat = a.category || 'analysis';
+    return '<div class="insight-card relative bg-primary rounded-[1.5rem] overflow-hidden min-h-[420px] flex flex-col justify-end p-10 lg:p-14 group cursor-pointer card-item" data-category="' + h(cat) + '">'
+      + '<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.2) 1px, transparent 0); background-size: 36px 36px;"></div>'
+      + '<div class="absolute top-10 right-10 opacity-[0.06]"><span class="material-symbols-outlined" style="font-size: 14rem; line-height:1;">policy</span></div>'
+      + '<div class="relative z-10 max-w-3xl">'
+        + '<div class="flex items-center gap-3 mb-6">'
+          + '<span class="' + (PILL[cat] || 'pill-analysis') + ' text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">' + (LABEL[cat] || cat) + '</span>'
+          + '<span class="text-on-primary-container text-xs">' + h(a.date) + ' &nbsp;&middot;&nbsp; ' + h(a.read_time) + '</span>'
+        + '</div>'
+        + '<h2 class="font-headline text-3xl md:text-5xl font-extrabold text-on-primary tracking-tighter leading-tight mb-6">' + h(a.title) + '</h2>'
+        + '<p class="text-on-primary-container text-lg leading-relaxed max-w-2xl mb-8">' + h(a.summary) + '</p>'
+        + '<a href="' + (a.link || '#') + '" class="read-link font-headline font-bold text-tertiary-fixed-dim text-sm uppercase tracking-widest">Read Full Analysis <span class="material-symbols-outlined text-sm">arrow_forward</span></a>'
+      + '</div>'
+    + '</div>';
+  }
+
+  // ── Card header per category ────────────────────────────────────────────────
+  function cardHeader(cat) {
+    if (cat === 'use-case') {
+      return '<div class="h-48 relative overflow-hidden bg-primary">'
+        + '<div class="absolute inset-0 flex items-center justify-center opacity-10"><span class="material-symbols-outlined text-on-primary" style="font-size: 8rem;">hub</span></div>'
+        + '<div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container"></div>'
+        + '<div class="absolute bottom-4 left-4"><span class="pill-use-case text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Use Case</span></div>'
+        + '</div>';
+    }
+    if (cat === 'article') {
+      return '<div class="h-48 bg-secondary-container relative overflow-hidden">'
+        + '<div class="absolute inset-0 flex items-center justify-center opacity-15"><span class="material-symbols-outlined" style="font-size: 8rem;">article</span></div>'
+        + '<div class="absolute bottom-4 left-4"><span class="pill-article text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Article</span></div>'
+        + '</div>';
+    }
+    return '<div class="h-48 bg-surface-container-high relative overflow-hidden">'
+      + '<div class="absolute inset-0 flex items-center justify-center opacity-10"><span class="material-symbols-outlined" style="font-size: 8rem;">analytics</span></div>'
+      + '<div class="absolute inset-0 bg-gradient-to-br from-primary-container/60 to-transparent"></div>'
+      + '<div class="absolute bottom-4 left-4"><span class="pill-analysis text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Analysis</span></div>'
+      + '</div>';
+  }
+
+  // ── Grid card ───────────────────────────────────────────────────────────────
+  function renderCard(a) {
+    var cat      = a.category || 'analysis';
+    var isDark   = cat === 'use-case';
+    var cardBg   = isDark ? 'bg-primary-container' : 'bg-surface-container-lowest';
+    var titleCol = isDark ? 'text-on-primary'           : 'text-primary';
+    var dateCol  = isDark ? 'text-on-primary-container' : 'text-on-surface-variant';
+    var bodyCol  = isDark ? 'text-primary-fixed-dim'    : 'text-on-surface-variant';
+    var linkCol  = isDark ? 'text-tertiary-fixed-dim'   : 'text-primary';
+
+    // Wide 2-column layout
+    if (a.wide) {
+      return '<div class="insight-card card-item flex-col md:col-span-2 bg-surface-container-low rounded-xl overflow-hidden cursor-pointer" data-category="' + h(cat) + '">'
+        + '<div class="grid md:grid-cols-2 h-full">'
+          + '<div class="p-10 flex flex-col justify-between">'
+            + '<div>'
+              + '<div class="flex items-center gap-3 mb-5">'
+                + '<span class="' + (PILL[cat] || 'pill-analysis') + ' text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">' + (LABEL[cat] || cat) + '</span>'
+                + '<span class="text-on-surface-variant text-xs">' + h(a.date) + ' &nbsp;&middot;&nbsp; ' + h(a.read_time) + '</span>'
+              + '</div>'
+              + '<h3 class="font-headline font-extrabold text-2xl text-primary leading-tight mb-4">' + h(a.title) + '</h3>'
+              + '<p class="text-on-surface-variant text-sm leading-relaxed mb-6">' + h(a.summary) + '</p>'
+            + '</div>'
+            + '<a href="' + (a.link || '#') + '" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>'
+          + '</div>'
+          + '<div class="bg-surface-container-high relative overflow-hidden min-h-[220px]">'
+            + '<div class="absolute inset-0 flex items-center justify-center opacity-10"><span class="material-symbols-outlined" style="font-size: 10rem;">groups</span></div>'
+            + '<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low to-transparent"></div>'
+          + '</div>'
+        + '</div>'
+      + '</div>';
+    }
+
+    // Standard card
+    return '<div class="insight-card card-item flex-col ' + cardBg + ' rounded-xl overflow-hidden cursor-pointer" data-category="' + h(cat) + '">'
+      + cardHeader(cat)
+      + '<div class="p-8 flex flex-col flex-1">'
+        + '<p class="' + dateCol + ' text-xs mb-3">' + h(a.date) + ' &nbsp;&middot;&nbsp; ' + h(a.read_time) + '</p>'
+        + '<h3 class="font-headline font-extrabold text-xl ' + titleCol + ' leading-tight mb-4">' + h(a.title) + '</h3>'
+        + '<p class="' + bodyCol + ' text-sm leading-relaxed flex-1 mb-6">' + h(a.summary) + '</p>'
+        + '<a href="' + (a.link || '#') + '" class="read-link font-headline font-bold ' + linkCol + ' text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>'
+      + '</div>'
+    + '</div>';
+  }
+
+  // ── Load & render from data/insights.json ──────────────────────────────────
+  function loadInsights() {
+    fetch('data/insights.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+
+        // Featured
+        var featuredSection = document.getElementById('featured-section');
+        if (data.featured && data.featured.title) {
+          featuredSection.innerHTML = renderFeatured(data.featured);
+        } else {
+          featuredSection.style.display = 'none';
+        }
+
+        // Grid
+        var grid = document.getElementById('cards-grid');
+        grid.innerHTML = (data.articles || []).map(renderCard).join('');
+
+        // Re-apply active filter after DOM is populated
+        var activeBtn = document.querySelector('.filter-btn.active');
+        if (activeBtn) { filterCards(activeBtn.dataset.filter); }
+      })
+      .catch(function(e) { console.warn('Insights data not found:', e); });
+  }
+
+  // ── Filter logic ────────────────────────────────────────────────────────────
+  window.filterCards = function(category) {
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
       btn.classList.remove('active');
       btn.classList.add('text-on-surface-variant');
     });
-    const activeBtn = document.querySelector(`[data-filter="${category}"]`);
-    if (activeBtn) {
-      activeBtn.classList.add('active');
-      activeBtn.classList.remove('text-on-surface-variant');
+    var active = document.querySelector('[data-filter="' + category + '"]');
+    if (active) { active.classList.add('active'); active.classList.remove('text-on-surface-variant'); }
+
+    var featured = document.getElementById('featured-section');
+    if (featured) {
+      featured.style.display = (category === 'all' || category === 'analysis') ? 'block' : 'none';
     }
 
-    // Show/hide featured section
-    const featured = document.getElementById('featured-section');
-    if (category === 'all' || category === 'analysis') {
-      featured.style.display = 'block';
-    } else {
-      featured.style.display = 'none';
-    }
-
-    // Show/hide cards
-    document.querySelectorAll('.card-item').forEach(card => {
-      const cardCategory = card.dataset.category;
-      if (category === 'all' || cardCategory === category) {
+    document.querySelectorAll('.card-item').forEach(function(card) {
+      var c = card.dataset.category;
+      if (category === 'all' || c === category) {
         card.classList.remove('hidden-card');
         card.style.display = 'flex';
       } else {
@@ -483,7 +419,10 @@
         card.style.display = 'none';
       }
     });
-  }
+  };
+
+  document.addEventListener('DOMContentLoaded', loadInsights);
+})();
 </script>
 
 </body>

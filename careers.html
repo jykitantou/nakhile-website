@@ -367,6 +367,78 @@
   </div>
 </footer>
 
+<!-- ═══════════════════════════ CAREERS — DYNAMIC LOAD FROM data/careers.json ═══════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  function h(s) {
+    return String(s != null ? s : '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function renderJobCard(job) {
+    var categories = Array.isArray(job.categories) ? job.categories.join(' ') : (job.categories || 'advisory');
+    var responsibilities = job.responsibilities || [];
+    var respHtml = responsibilities.map(function(r) {
+      return '<li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="text-tertiary-fixed-dim mt-1 shrink-0">\u2014</span>' + h(r) + '</li>';
+    }).join('');
+    var applyHref = 'mailto:contactus@nakhile.com?subject=Application%20%E2%80%94%20' + encodeURIComponent(job.title || '');
+
+    return '<div class="job-card job-item bg-surface-container-lowest rounded-xl overflow-hidden" data-category="' + h(categories) + '">'
+      + '<div class="p-8 md:p-10">'
+        + '<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">'
+          + '<div>'
+            + '<div class="flex flex-wrap gap-2 mb-3">'
+              + '<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">' + h(job.department) + '</span>'
+              + '<span class="bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">' + h(job.contract_type) + '</span>'
+              + '<span class="bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">' + h(job.location) + '</span>'
+            + '</div>'
+            + '<h3 class="font-headline font-extrabold text-2xl text-primary tracking-tight">' + h(job.title) + '</h3>'
+          + '</div>'
+          + '<a href="' + applyHref + '" class="shrink-0 inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-opacity">Apply Now <span class="material-symbols-outlined text-sm">arrow_forward</span></a>'
+        + '</div>'
+        + '<p class="text-on-surface-variant leading-relaxed mb-6">' + h(job.summary) + '</p>'
+        + (respHtml ? '<div class="border-t border-outline-variant/20 pt-6"><p class="font-headline font-bold text-sm text-primary mb-4">Key Responsibilities</p><ul class="space-y-2">' + respHtml + '</ul></div>' : '')
+      + '</div>'
+      + '<div class="bg-surface-container-low px-8 md:px-10 py-4 flex items-center justify-between">'
+        + '<span class="text-on-surface-variant text-xs">Posted: ' + h(job.posted_date || '') + '</span>'
+        + '<span class="text-on-surface-variant text-xs">Deadline: ' + h(job.deadline || '') + '</span>'
+      + '</div>'
+    + '</div>';
+  }
+
+  function loadCareers() {
+    fetch('data/careers.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var jobs      = data.jobs || [];
+        var jobsList  = document.getElementById('jobs-list');
+        var emptyState = document.getElementById('empty-state');
+        if (!jobsList) return;
+
+        if (jobs.length === 0) {
+          if (emptyState) emptyState.style.display = 'block';
+          return;
+        }
+
+        // Hide empty state — real jobs are available
+        if (emptyState) emptyState.style.display = 'none';
+
+        // Inject job cards before the empty-state node
+        jobs.forEach(function(job) {
+          var tmp = document.createElement('div');
+          tmp.innerHTML = renderJobCard(job).trim();
+          var card = tmp.firstElementChild;
+          if (card) jobsList.insertBefore(card, emptyState);
+        });
+      })
+      .catch(function(e) { console.warn('Careers data not found:', e); });
+  }
+
+  document.addEventListener('DOMContentLoaded', loadCareers);
+})();
+</script>
+
 <!-- ═══════════════════════════ FILTER LOGIC ═══════════════════════════ -->
 <script>
   function filterJobs(category) {
