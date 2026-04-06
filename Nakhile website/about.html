@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Nakhile Consulting</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "tertiary": "#000204",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#f2f4f6",
+          "surface-bright": "#f7f9fb",
+          "inverse-primary": "#b6c7e9",
+          "surface-container-high": "#e6e8ea",
+          "outline": "#75777e",
+          "on-primary-container": "#7586a5",
+          "error": "#ba1a1a",
+          "surface-dim": "#d8dadc",
+          "on-tertiary-container": "#0091b1",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed": "#001f28",
+          "on-primary-fixed-variant": "#364763",
+          "on-surface": "#191c1e",
+          "on-secondary": "#ffffff",
+          "tertiary-fixed-dim": "#4cd6ff",
+          "inverse-surface": "#2d3133",
+          "secondary-fixed-dim": "#bdc7dc",
+          "surface-container-lowest": "#ffffff",
+          "background": "#f7f9fb",
+          "secondary-fixed": "#d9e3f9",
+          "outline-variant": "#c5c6ce",
+          "on-error": "#ffffff",
+          "inverse-on-surface": "#eff1f3",
+          "on-surface-variant": "#44474d",
+          "on-tertiary-fixed-variant": "#004e60",
+          "surface-tint": "#4e5f7c",
+          "on-secondary-container": "#596376",
+          "on-primary-fixed": "#081c36",
+          "on-secondary-fixed-variant": "#3d4759",
+          "surface-container": "#eceef0",
+          "secondary": "#555f71",
+          "primary-fixed": "#d6e3ff",
+          "tertiary-container": "#00202a",
+          "error-container": "#ffdad6",
+          "primary": "#00030a",
+          "primary-container": "#0a1d37",
+          "secondary-container": "#d6e0f6",
+          "on-error-container": "#93000a",
+          "primary-fixed-dim": "#b6c7e9",
+          "on-secondary-fixed": "#121c2c",
+          "surface-variant": "#e0e3e5",
+          "surface-container-highest": "#e0e3e5",
+          "on-background": "#191c1e",
+          "surface": "#f7f9fb",
+          "tertiary-fixed": "#b7eaff"
+        },
+        fontFamily: {
+          "headline": ["Manrope"],
+          "body": ["Inter"],
+          "label": ["Inter"]
+        },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .tonal-shift-surface-container-low {
+    background-color: rgba(242, 244, 246, 0.8);
+  }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+    <a href="index.html" class="text-xl font-black text-slate-950 uppercase tracking-tighter">Nakhile Consulting</a>
+    <div class="hidden md:flex space-x-10 items-center">
+      <a href="services.html" class="font-manrope font-bold tracking-tight text-sm text-slate-600 hover:text-slate-950 transition-colors">Services</a>
+      <a href="about.html" class="font-manrope font-bold tracking-tight text-sm text-slate-950 border-b-2 border-slate-950 pb-1">About Us</a>
+      <a href="insights.html" class="font-manrope font-bold tracking-tight text-sm text-slate-600 hover:text-slate-950 transition-colors">Insights</a>
+      <a href="contact.html" class="font-manrope font-bold tracking-tight text-sm text-slate-600 hover:text-slate-950 transition-colors">Contact</a>
+    </div>
+    <a href="contact.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-manrope font-bold text-sm tracking-tight transition-all hover:opacity-90 active:scale-95">Book Consultation</a>
+  </div>
+</nav>
+
+<main class="pt-20">
+
+  <!-- Hero Section: Who We Are -->
+  <section class="relative min-h-[819px] flex items-center overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 gap-16 items-center py-24">
+      <div class="z-10">
+        <span class="inline-block py-1 px-3 bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase rounded-lg mb-6">Who we are</span>
+        <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-primary leading-[0.9] mb-8">
+          Bridging the gap between technical teams and business leadership.
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+          Nakhile Consulting operates at the intersection of architectural precision and executive vision. We translate complex data infrastructures into actionable governance frameworks that drive high-stakes decision making.
+        </p>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+          <img class="w-full h-full object-cover" alt="minimalist architectural concrete structure with strong shadows and clean lines under a clear bright sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtzug7ilfME-LSwTRtVgCZNjWdulCeYbEc5XCpYbGBNc8a-nC0UG4cw5BbRzoyny2f-1OksxaujIzm55CGaJtUrU7ykt_f8hJX3kmQNOGVtSXlvy2XjtqT43BloQrjXqF2QJbPjMSyENzAgoafaDcg3J3VfhC42Qm17Lxl_LmtoX2JjK2wp5dnX7eYsdt0ZmL_8YHw-hgceSY-aS0JMTkog4-EWqN2ZTws9ncl1btDixL04Y1oP-uIs0S1ej0EGif1FYcPQdOyHKY"/>
+        </div>
+        <!-- Aesthetic Grid Accent -->
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 opacity-20" style="background-image: radial-gradient(circle, #75777e 1px, transparent 1px); background-size: 20px 20px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="bg-surface-container-low py-32">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row gap-16">
+        <div class="md:w-1/3">
+          <h2 class="font-headline text-4xl font-extrabold tracking-tight text-primary">Our Mission</h2>
+          <div class="mt-4 w-12 h-1 bg-tertiary-fixed-dim"></div>
+        </div>
+        <div class="md:w-2/3 grid gap-12">
+          <div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm border-l-4 border-primary">
+            <h3 class="text-2xl font-headline font-bold mb-4">Embedding effective governance.</h3>
+            <p class="text-on-surface-variant leading-relaxed">We don't just advise; we integrate structural integrity into the heart of your organization's digital evolution, ensuring that growth is both sustainable and secure.</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-8 bg-surface-container rounded-xl">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim mb-4 block">translate</span>
+              <h4 class="font-bold text-lg mb-2">Translating data into value</h4>
+              <p class="text-sm text-on-surface-variant">Converting complex technical signals into the language of strategic business outcomes.</p>
+            </div>
+            <div class="p-8 bg-surface-container rounded-xl">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim mb-4 block">verified</span>
+              <h4 class="font-bold text-lg mb-2">Strengthening decisions</h4>
+              <p class="text-sm text-on-surface-variant">Providing the clarity required for leadership to act with confidence in an era of AI uncertainty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section: Bento Grid -->
+  <section class="py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center mb-20">
+        <span class="text-tertiary-fixed-dim font-bold tracking-widest uppercase text-xs">The Architectural Pillars</span>
+        <h2 class="font-headline text-4xl font-extrabold mt-4">Our Core Values</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+        <!-- Value 1: Clarity -->
+        <div class="md:col-span-3 bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-end relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-8 opacity-10">
+            <span class="material-symbols-outlined text-9xl">visibility</span>
+          </div>
+          <h3 class="text-3xl font-headline font-extrabold mb-4">Clarity over complexity</h3>
+          <p class="text-primary-fixed-dim max-w-md">We strip away the noise to find the structural truth. If it's not clear, it's not finished.</p>
+        </div>
+        <!-- Value 2: Governance -->
+        <div class="md:col-span-3 bg-surface-container-high p-10 rounded-xl flex flex-col justify-center border-l-4 border-tertiary-fixed-dim">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl mb-6 block">account_balance</span>
+          <h3 class="text-2xl font-headline font-extrabold mb-2">Governance that works</h3>
+          <p class="text-on-surface-variant">Practical frameworks designed for the real-world pace of modern business operations.</p>
+        </div>
+        <!-- Value 3: Business First -->
+        <div class="md:col-span-2 bg-secondary-container p-8 rounded-xl">
+          <h3 class="font-headline font-bold text-xl mb-3">Business-first</h3>
+          <p class="text-on-secondary-container text-sm">Technology is the tool; business objective is the architect. We never lose sight of the bottom line.</p>
+        </div>
+        <!-- Value 4: Precision -->
+        <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col items-center text-center justify-center">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-on-primary">biotech</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl mb-2">Precision</h3>
+          <p class="text-on-surface-variant text-sm">In advisory, details matter. Our insights are calibrated to the highest standards of accuracy.</p>
+        </div>
+        <!-- Value 5: Trust -->
+        <div class="md:col-span-2 bg-tertiary-container text-on-tertiary p-8 rounded-xl relative overflow-hidden">
+          <div class="relative z-10">
+            <h3 class="font-headline font-bold text-xl mb-3">Trust through transparency</h3>
+            <p class="text-tertiary-fixed-dim text-sm">Radical honesty in our processes and outputs. We build partnerships that last decades.</p>
+          </div>
+          <div class="absolute inset-0 opacity-20">
+            <img class="w-full h-full object-cover" alt="macro close-up of geometric glass prisms refracting white light into a spectrum" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF7RqHc7nG139_h9PTgOPIvgYFDtyEOHNZHqSplyfI5EXvhojiCFeqfQqLmAW4Ewi4WB6aF9rIKeDYsglnGwG2tWGCQw2Tq6JO3O2wNoGXg4Re3y9qRlM08PIcoBthqwaXJoe4PFhuFN_UvghTnCBLAfLyLpbei4Z-M2odcdr2RGN4l6kdVAKUcUFe8NyzRX6OWqSDk9o1U8Uzp_m9wNQh8kvQn3YJkz6OLkn6qZjCCwHyBB1WEeHqhMO2WKh_fEPaC6kHlHgRRaQ"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Credentials Section ── -->
+  <section class="py-24 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row gap-16 items-start">
+        <div class="md:w-1/3">
+          <span class="font-label text-xs font-bold tracking-widest text-on-primary-container uppercase mb-4 block">Standards &amp; Certifications</span>
+          <h2 class="font-headline text-4xl font-extrabold tracking-tight text-primary mb-4">Our Credentials.</h2>
+          <div class="w-12 h-1 bg-tertiary-fixed-dim mb-6"></div>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Our advisory team includes professionals certified to the highest international standards in AI governance and information security — giving every client engagement a foundation of verified expertise.</p>
+        </div>
+        <div class="md:w-2/3 grid md:grid-cols-2 gap-6">
+          <!-- ISO 42001 -->
+          <div class="bg-primary rounded-xl p-8 relative overflow-hidden">
+            <div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none">
+              <span class="material-symbols-outlined" style="font-size: 8rem; line-height:1;">smart_toy</span>
+            </div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-tertiary-fixed-dim/20 rounded-xl flex items-center justify-center">
+                  <span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl" style="font-variation-settings:'FILL' 1;">smart_toy</span>
+                </div>
+                <div>
+                  <p class="font-headline font-extrabold text-on-primary text-xl tracking-tight">ISO 42001</p>
+                  <p class="text-tertiary-fixed-dim text-[10px] uppercase tracking-widest">Certified Team</p>
+                </div>
+              </div>
+              <h3 class="font-headline font-bold text-on-primary text-lg mb-3">AI Management Systems</h3>
+              <p class="text-on-primary-container text-sm leading-relaxed">The first international standard dedicated to AI management systems. Our certified professionals design governance frameworks in direct alignment with its requirements — covering AI risk, lifecycle oversight, and responsible AI practices.</p>
+              <div class="mt-6 pt-5 border-t border-white/10">
+                <p class="text-tertiary-fixed-dim text-[10px] font-bold uppercase tracking-widest">Published Dec 2023 · ISO/IEC 42001:2023</p>
+              </div>
+            </div>
+          </div>
+          <!-- ISO 27001 -->
+          <div class="bg-surface-container-lowest rounded-xl p-8 border-l-4 border-tertiary-fixed-dim relative overflow-hidden">
+            <div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none">
+              <span class="material-symbols-outlined" style="font-size: 8rem; line-height:1;">lock</span>
+            </div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center">
+                  <span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl" style="font-variation-settings:'FILL' 1;">lock</span>
+                </div>
+                <div>
+                  <p class="font-headline font-extrabold text-primary text-xl tracking-tight">ISO 27001</p>
+                  <p class="text-on-primary-container text-[10px] uppercase tracking-widest">Certified Team</p>
+                </div>
+              </div>
+              <h3 class="font-headline font-bold text-primary text-lg mb-3">Information Security Management</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">The international standard for information security management systems. Our certified professionals bring rigorous security governance expertise to every data and analytics engagement — a key trust signal for clients in regulated industries.</p>
+              <div class="mt-6 pt-5 border-t border-outline-variant/20">
+                <p class="text-on-primary-container text-[10px] font-bold uppercase tracking-widest">ISO/IEC 27001:2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 max-w-7xl mx-auto px-8">
+    <div class="bg-surface-container-low rounded-xl p-16 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div>
+        <h2 class="font-headline text-3xl font-extrabold mb-2">Ready for architectural clarity?</h2>
+        <p class="text-on-surface-variant">Schedule a session with our senior consultants to audit your governance framework.</p>
+      </div>
+      <a href="contact.html" class="bg-primary text-on-primary px-10 py-4 rounded-xl font-headline font-bold text-lg hover:bg-opacity-90 transition-all whitespace-nowrap">Book a Consultation</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-16 px-8 bg-slate-950 mt-24">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+    <div class="md:col-span-1">
+      <div class="text-lg font-bold text-slate-50 font-headline mb-6">Nakhile Consulting</div>
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="inline-flex items-center gap-1.5 bg-slate-800 px-3 py-1.5 rounded-lg">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-size:14px; font-variation-settings:'FILL' 1;">smart_toy</span>
+          <span class="text-slate-300 text-[10px] font-bold uppercase tracking-wider">ISO 42001</span>
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-slate-800 px-3 py-1.5 rounded-lg">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-size:14px; font-variation-settings:'FILL' 1;">lock</span>
+          <span class="text-slate-300 text-[10px] font-bold uppercase tracking-wider">ISO 27001</span>
+        </span>
+      </div>
+      <p class="font-manrope text-xs tracking-wide uppercase text-slate-400 leading-relaxed">
+        &copy; 2024 Nakhile Consulting. Architectural Clarity in Governance.
+      </p>
+    </div>
+    <div>
+      <h5 class="font-manrope text-xs tracking-widest uppercase text-slate-500 mb-6">Practice</h5>
+      <ul class="space-y-4">
+        <li><a href="services.html"  class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">Services</a></li>
+        <li><a href="about.html"     class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">About Us</a></li>
+        <li><a href="insights.html"  class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">Insights</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-manrope text-xs tracking-widest uppercase text-slate-500 mb-6">Legal &amp; Ethics</h5>
+      <ul class="space-y-4">
+        <li><a href="privacy-policy.html" class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html" class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">Terms of Service</a></li>
+        <li><a href="#"                   class="font-manrope text-xs tracking-wide uppercase text-cyan-400 font-medium">AI Ethics Framework</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-manrope text-xs tracking-widest uppercase text-slate-500 mb-6">Global</h5>
+      <ul class="space-y-4">
+        <li><a href="#"            class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">Global Offices</a></li>
+        <li><a href="careers.html" class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">Careers</a></li>
+        <li><a href="contact.html" class="font-manrope text-xs tracking-wide uppercase text-slate-400 hover:text-slate-50 transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

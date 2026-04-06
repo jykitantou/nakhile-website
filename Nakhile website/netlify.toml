@@ -1,0 +1,13 @@
+# ─────────────────────────────────────────────
+#  Nakhile Consulting — Netlify configuration
+# ─────────────────────────────────────────────
+
+[build]
+  publish = "."
+
+# Required for Decap CMS identity widget
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
