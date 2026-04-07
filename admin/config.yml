@@ -1,51 +1,52 @@
 # ─────────────────────────────────────────────────────────────────────────────
 #  Decap CMS — Nakhile Consulting
-#  Documentation : https://decapcms.org/docs/configuration-options/
 # ─────────────────────────────────────────────────────────────────────────────
 
 backend:
   name: git-gateway
-  branch: main          # ← doit correspondre à la branche principale de votre repo GitHub
+  branch: main
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# ─────────────────────────────────────────────────────────────────────────────
-#  COLLECTIONS
-# ─────────────────────────────────────────────────────────────────────────────
 collections:
 
   # ── 1. INSIGHTS ────────────────────────────────────────────────────────────
   - name: "insights"
     label: "Insights"
     label_singular: "Article / Analyse"
-    icon: "article"
     files:
       - name: "insights_data"
         label: "Articles, Analyses & Use Cases"
         file: "data/insights.json"
         fields:
 
-          # Article à la une (grand bandeau sombre en haut de la page)
+          # Article à la une
           - label: "Article à la une"
             name: featured
             widget: object
             summary: "{{fields.title}}"
             fields:
-              - { label: "Titre",           name: title,     widget: string }
+              - { label: "Titre",            name: title,     widget: string }
               - label: "Catégorie"
                 name: category
                 widget: select
                 options:
-                  - { label: "Analyse",   value: analysis  }
-                  - { label: "Article",   value: article   }
-                  - { label: "Use Case",  value: use-case  }
-              - { label: "Date",            name: date,      widget: string, hint: "Ex : March 2026" }
-              - { label: "Temps de lecture", name: read_time, widget: string, hint: "Ex : 12 min read" }
-              - { label: "Résumé",          name: summary,   widget: text }
-              - { label: "Lien (URL)",      name: link,      widget: string, default: "#", hint: "Laissez # si pas de page dédiée" }
+                  - { label: "Analyse",  value: analysis  }
+                  - { label: "Article",  value: article   }
+                  - { label: "Use Case", value: use-case  }
+              - { label: "Slug (URL)",        name: slug,      widget: string, hint: "Ex: algorithmic-opacity-2026 — minuscules, tirets, pas d'accents" }
+              - { label: "Date",              name: date,      widget: string, hint: "Ex: March 2026" }
+              - { label: "Temps de lecture",  name: read_time, widget: string, hint: "Ex: 12 min read" }
+              - { label: "Résumé (accroche)", name: summary,   widget: text }
+              - label: "Contenu complet"
+                name: content
+                widget: markdown
+                required: false
+                hint: "Rédigez ici l'article complet. Supporte titres, listes, images, tableaux, citations."
+              - { label: "Lien externe (optionnel)", name: link, widget: string, default: "#", required: false }
 
-          # Liste des articles dans la grille
+          # Articles de la grille
           - label: "Articles"
             name: articles
             widget: list
@@ -56,24 +57,28 @@ collections:
                 name: category
                 widget: select
                 options:
-                  - { label: "Analyse",   value: analysis  }
-                  - { label: "Article",   value: article   }
-                  - { label: "Use Case",  value: use-case  }
-              - { label: "Date",             name: date,      widget: string, hint: "Ex : January 2026" }
-              - { label: "Temps de lecture", name: read_time, widget: string, hint: "Ex : 8 min read" }
-              - { label: "Résumé",           name: summary,   widget: text }
-              - { label: "Lien (URL)",       name: link,      widget: string, default: "#" }
+                  - { label: "Analyse",  value: analysis  }
+                  - { label: "Article",  value: article   }
+                  - { label: "Use Case", value: use-case  }
+              - { label: "Slug (URL)",        name: slug,      widget: string, hint: "Ex: eu-ai-act-2026 — minuscules, tirets, pas d'accents" }
+              - { label: "Date",              name: date,      widget: string, hint: "Ex: January 2026" }
+              - { label: "Temps de lecture",  name: read_time, widget: string, hint: "Ex: 8 min read" }
+              - { label: "Résumé (accroche)", name: summary,   widget: text }
+              - label: "Contenu complet"
+                name: content
+                widget: markdown
+                required: false
+                hint: "Rédigez ici l'article complet. Supporte titres, listes, images, tableaux, citations."
               - label: "Affichage large (2 colonnes)"
                 name: wide
                 widget: boolean
                 default: false
-                hint: "Cochez pour afficher cet article sur toute la largeur de la grille"
+              - { label: "Lien externe (optionnel)", name: link, widget: string, default: "#", required: false }
 
   # ── 2. CAREERS ─────────────────────────────────────────────────────────────
   - name: "careers"
     label: "Carrières"
     label_singular: "Offre d'emploi"
-    icon: "work"
     files:
       - name: "careers_data"
         label: "Offres d'emploi"
@@ -84,28 +89,23 @@ collections:
             widget: list
             summary: "{{fields.title}} — {{fields.department}} ({{fields.location}})"
             fields:
-              - { label: "Titre du poste",   name: title,         widget: string }
-              - { label: "Département",      name: department,    widget: string,  hint: "Ex : Advisory, Technology, Operations" }
-              - { label: "Lieu",             name: location,      widget: string,  hint: "Ex : Sandton, South Africa / Remote" }
+              - { label: "Titre du poste",             name: title,         widget: string }
+              - { label: "Département",                name: department,    widget: string }
+              - { label: "Lieu",                       name: location,      widget: string }
               - label: "Type de contrat"
                 name: contract_type
                 widget: select
-                options:
-                  - "Full-time"
-                  - "Part-time"
-                  - "Contract"
-                  - "Freelance"
+                options: ["Full-time", "Part-time", "Contract", "Freelance"]
               - label: "Catégories (filtres)"
                 name: categories
                 widget: select
                 multiple: true
                 options:
-                  - { label: "Advisory",    value: advisory }
-                  - { label: "Technology",  value: tech     }
-                  - { label: "Operations",  value: ops      }
-                  - { label: "Remote",      value: remote   }
-                hint: "Sélectionnez une ou plusieurs catégories pour le filtre"
-              - { label: "Description courte du poste", name: summary, widget: text }
+                  - { label: "Advisory",   value: advisory }
+                  - { label: "Technology", value: tech     }
+                  - { label: "Operations", value: ops      }
+                  - { label: "Remote",     value: remote   }
+              - { label: "Description courte",         name: summary,       widget: text }
               - label: "Missions principales"
                 name: responsibilities
                 widget: list
@@ -114,5 +114,5 @@ collections:
                 name: requirements
                 widget: list
                 field: { label: "Critère", name: item, widget: string }
-              - { label: "Date de publication", name: posted_date, widget: string, hint: "Ex : April 2026" }
-              - { label: "Date limite de candidature", name: deadline, widget: string, hint: "Ex : 30 May 2026", required: false }
+              - { label: "Date de publication",        name: posted_date,   widget: string, hint: "Ex: April 2026" }
+              - { label: "Date limite de candidature", name: deadline,      widget: string, required: false }

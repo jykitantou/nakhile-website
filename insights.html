@@ -298,7 +298,7 @@
         + '</div>'
         + '<h2 class="font-headline text-3xl md:text-5xl font-extrabold text-on-primary tracking-tighter leading-tight mb-6">' + h(a.title) + '</h2>'
         + '<p class="text-on-primary-container text-lg leading-relaxed max-w-2xl mb-8">' + h(a.summary) + '</p>'
-        + '<a href="' + (a.link || '#') + '" class="read-link font-headline font-bold text-tertiary-fixed-dim text-sm uppercase tracking-widest">Read Full Analysis <span class="material-symbols-outlined text-sm">arrow_forward</span></a>'
+        + '<a href="' + (a.slug ? ('article.html?slug=' + encodeURIComponent(a.slug)) : (a.link || '#')) + '" class="read-link font-headline font-bold text-tertiary-fixed-dim text-sm uppercase tracking-widest">Read Full Analysis <span class="material-symbols-outlined text-sm">arrow_forward</span></a>'
       + '</div>'
     + '</div>';
   }
@@ -348,7 +348,7 @@
               + '<h3 class="font-headline font-extrabold text-2xl text-primary leading-tight mb-4">' + h(a.title) + '</h3>'
               + '<p class="text-on-surface-variant text-sm leading-relaxed mb-6">' + h(a.summary) + '</p>'
             + '</div>'
-            + '<a href="' + (a.link || '#') + '" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>'
+            + '<a href="' + (a.slug ? ('article.html?slug=' + encodeURIComponent(a.slug)) : (a.link || '#')) + '" class="read-link font-headline font-bold text-primary text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>'
           + '</div>'
           + '<div class="bg-surface-container-high relative overflow-hidden min-h-[220px]">'
             + '<div class="absolute inset-0 flex items-center justify-center opacity-10"><span class="material-symbols-outlined" style="font-size: 10rem;">groups</span></div>'
@@ -365,7 +365,7 @@
         + '<p class="' + dateCol + ' text-xs mb-3">' + h(a.date) + ' &nbsp;&middot;&nbsp; ' + h(a.read_time) + '</p>'
         + '<h3 class="font-headline font-extrabold text-xl ' + titleCol + ' leading-tight mb-4">' + h(a.title) + '</h3>'
         + '<p class="' + bodyCol + ' text-sm leading-relaxed flex-1 mb-6">' + h(a.summary) + '</p>'
-        + '<a href="' + (a.link || '#') + '" class="read-link font-headline font-bold ' + linkCol + ' text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>'
+        + '<a href="' + (a.slug ? ('article.html?slug=' + encodeURIComponent(a.slug)) : (a.link || '#')) + '" class="read-link font-headline font-bold ' + linkCol + ' text-xs uppercase tracking-widest">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>'
       + '</div>'
     + '</div>';
   }

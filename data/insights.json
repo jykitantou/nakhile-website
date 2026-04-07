@@ -2,81 +2,99 @@
   "featured": {
     "title": "The Hidden Cost of Algorithmic Opacity in Financial Services",
     "category": "analysis",
+    "slug": "algorithmic-opacity-financial-services",
     "date": "March 2026",
     "read_time": "12 min read",
     "summary": "When automated models make high-stakes credit, pricing, and risk decisions without explainability structures in place, organisations don't just face regulatory scrutiny — they accumulate invisible governance debt that surfaces at the worst possible moment.",
+    "content": "",
     "link": "#"
   },
   "articles": [
     {
       "title": "EU AI Act: What It Means for Your Governance Framework",
       "category": "analysis",
+      "slug": "eu-ai-act-governance-framework",
       "date": "February 2026",
       "read_time": "8 min read",
       "summary": "A breakdown of high-risk AI system classifications, conformity requirements, and the operational changes global firms must embed before enforcement deadlines.",
+      "content": "",
       "link": "#",
       "wide": false
     },
     {
       "title": "From Black Box to Glass Box: Explainability in Practice",
       "category": "article",
+      "slug": "explainability-black-box-glass-box",
       "date": "January 2026",
       "read_time": "6 min read",
       "summary": "Explainability is not a compliance checkbox — it is a structural design choice. We explore the practical techniques that make model decisions auditable without sacrificing performance.",
+      "content": "",
       "link": "#",
       "wide": false
     },
     {
       "title": "How a Global Bank Reduced Model Risk Exposure by 40%",
       "category": "use-case",
+      "slug": "global-bank-model-risk-reduction",
       "date": "December 2025",
       "read_time": "10 min read",
       "summary": "An end-to-end account of our engagement with a Tier-1 financial institution: mapping algorithmic decision points, introducing materiality-based oversight, and building a board-ready reporting layer.",
+      "content": "",
       "link": "#",
       "wide": false
     },
     {
       "title": "The Decision Stack: Mapping Accountability in Automated Systems",
       "category": "article",
+      "slug": "decision-stack-accountability-automated-systems",
       "date": "November 2025",
       "read_time": "7 min read",
       "summary": "When an autonomous system makes a consequential decision, who is accountable? We introduce the Decision Stack framework — a layered model for assigning ownership across technical and business teams.",
+      "content": "",
       "link": "#",
       "wide": false
     },
     {
       "title": "Regulatory Divergence in AI: Navigating US, EU, and APAC Frameworks",
       "category": "analysis",
+      "slug": "regulatory-divergence-ai-us-eu-apac",
       "date": "October 2025",
       "read_time": "9 min read",
       "summary": "As jurisdictions develop competing AI regulatory regimes, multinational organisations face a compliance patchwork. We map the key divergences and propose a unified governance architecture that satisfies all three.",
+      "content": "",
       "link": "#",
       "wide": false
     },
     {
       "title": "Autonomous Trading Systems: A Governance Blueprint",
       "category": "use-case",
+      "slug": "autonomous-trading-systems-governance",
       "date": "September 2025",
       "read_time": "11 min read",
       "summary": "A deep-dive into our governance engagement with a quantitative asset manager — embedding real-time oversight controls, kill-switch protocols, and audit trails into a live algorithmic trading infrastructure.",
+      "content": "",
       "link": "#",
       "wide": false
     },
     {
       "title": "Building an AI Ethics Committee That Actually Delivers",
       "category": "article",
+      "slug": "ai-ethics-committee-delivers",
       "date": "August 2025",
       "read_time": "5 min read",
       "summary": "Most AI ethics committees are window dressing. We outline the mandate, membership criteria, decision rights, and escalation pathways that make these bodies genuinely effective — and credible to regulators.",
+      "content": "",
       "link": "#",
       "wide": true
     },
     {
       "title": "Model Drift and the Governance Gap: A Quantitative Perspective",
       "category": "analysis",
+      "slug": "model-drift-governance-gap",
       "date": "July 2025",
       "read_time": "8 min read",
       "summary": "Edge-case drift is the leading cause of AI system failure in production. We quantify the governance gap between model deployment and ongoing oversight, and propose a monitoring architecture firms can implement today.",
+      "content": "",
       "link": "#",
       "wide": false
     }
